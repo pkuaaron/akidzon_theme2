@@ -12,7 +12,7 @@ from openedx.core.djangolib.markup import HTML, Text
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Akidzon - online education platform</title>
+  <title>Akidzon - online learning platform</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -56,7 +56,9 @@ from openedx.core.djangolib.markup import HTML, Text
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html">Green</a></h1>
+      <h1 class="logo mr-auto"><a href="index.html">
+        <img src="${static.url('images/logo.png')}" alt="Akidzon Logo">
+      </a></h1>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
@@ -179,18 +181,25 @@ from openedx.core.djangolib.markup import HTML, Text
         </div>
 
         <div class="row no-gutters">
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon"><i class="icofont-clock-time"></i></div>
               <h4 class="title"><a href="">Real-Time Diagnostic</a></h4>
               <p class="description">Akidzon gives real time grading and diagnostic about what your child knows and what need to be improved.</p>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="icon-box">
               <div class="icon"><i class="icofont-pen-alt-4"></i></div>
               <h4 class="title"><a href="">Unlimited Practice</a></h4>
               <p class="description">You child can choose different ways to practice the same concept and build a strong foundation of knowledge.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box">
+              <div class="icon"><i class="icofont-pen-alt-4"></i></div>
+              <h4 class="title"><a href="">Accessible to Everywhere</a></h4>
+              <p class="description">You can learn at home or anywhere. </p>
             </div>
           </div>
         </div>
@@ -220,9 +229,10 @@ from openedx.core.djangolib.markup import HTML, Text
               <li><i class="icofont-check-circled"></i> Interactive forums and discussion boards.</li>
               <li><i class="icofont-check-circled"></i> Advanced learner and Instructor dashboards.</li>
               <li><i class="icofont-check-circled"></i> Works on any device.</li>
+              <li><i class="icofont-check-circled"></i> No matter what academic level, your child can progress through the individualized instruction at his or her own pace – advancing step by logical step.</li>
             </ul>
             <p>
-              Our on-line learning platform can help you and your kids to reach the goal in an immersive and enjoyable way.
+              Our on-line learning platform can help you and your kids to reach the goal in an immersive and enjoyable way. We help to accelerate your child’s learning from pre-k to 12th grade.
             </p>
           </div>
         </div>
@@ -429,32 +439,6 @@ from openedx.core.djangolib.markup import HTML, Text
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <h3>Akidzon</h3>
-      <p>Akidzon is personalized e-learning platform, Akidzon meets the unique needs of each learner.</p>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>Akidzon</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/green-free-one-page-bootstrap-template/ -->
-        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="${static.url('vendor/jquery/jquery.min.js')}"></script>
