@@ -33,7 +33,6 @@ from openedx.core.djangolib.markup import HTML, Text
 
 </head>
 
-<body>
 
   <!-- ======= Top Bar ======= -->
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
@@ -88,23 +87,17 @@ from openedx.core.djangolib.markup import HTML, Text
         </ul>
       </nav><!-- .nav-menu -->
 
-      <%include file="navbar-logo-header.html" args="online_help_token=online_help_token"/>
-      <div class="hamburger-menu" role="button" aria-label=${_("Options Menu")} aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
-      </div>
-      % if user.is_authenticated:
+      <!-- % if user.is_authenticated:
           <%include file="navbar-authenticated.html" args="online_help_token=online_help_token"/>
       % else:
           <%include file="navbar-not-authenticated.html" args="online_help_token=online_help_token"/>
-      % endif
+      % endif -->
       <!-- <a href="#about" class="get-started-btn scrollto">Get Started</a> -->
 
     </div>
   </header><!-- End Header -->
 
+<main id="main">
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -162,7 +155,6 @@ from openedx.core.djangolib.markup import HTML, Text
     </div>
   </section><!-- End Hero -->
 
-  <main id="main">
 
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services section-bg">
@@ -464,4 +456,25 @@ from openedx.core.djangolib.markup import HTML, Text
   <!-- Template Main JS File -->
   <script src="${static.url('js/main.js')}"></script>
 
-</body>
+  <%block name="js_extra">
+     <script type="text/javascript">
+        $(window).load(function() {
+           if(getParameterByName('next')) {
+                $('#login').trigger("click");
+           }
+        })
+     </script>
+  </%block>
+
+  % if show_signup_immediately is not UNDEFINED:
+    ## NOTE: This won't work in production, because anonymous views are cached, so it will
+    ## show either with or without this extra js for 3 minutes at a time.
+  <script type="text/javascript">
+    $(window).load(function() {$('#signup_action').trigger("click");});
+  </script>
+  % endif
+  % if not uses_bootstrap:
+    <!-- McDaniel Oct-2018: add the Bootstrap javascript library, unless it's already included from webpack -->
+    ## xss-lint: disable=mako-invalid-js-filter
+    <script type="text/javascript" src="${static.url('common/js/vendor/bootstrap.bundle.js')}"></script>
+  % endif
